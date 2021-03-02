@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AdminPanel</title>
+    <link rel="stylesheet" href="../CSS/app.css" />
+    <link rel="stylesheet" href="../CSS/admin.css" />
+    <link rel="stylesheet" href="../CSS/game.css" />
+    <script src="../JS/Classes/LogIn.js" defer></script>
+    <script src="../JS/Events/AdminEvent.js" defer></script>
+    <script src="../JS/Classes/Quiz.js" defer></script>
+    <script src="../JS/Classes/Question.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex-center flex-column">
+        <h1>Admin panel</h1>
+        <a class="btn" id="logoutBtn" >LogOut</a>        
+        <a class="btn" id="showQuizFormBtn">Create New Quiz</a>
+        <a class="btn" href="game.html">Pick and Play a Quiz</a>
+        <a class="btn" href="../index.html">Go To Start</a>
+      </div>
+      <div id="NewQuizContainer" class="flex-center flex-column hidden">
+        <form method="post" id="NewQuizForm" name="NewQuizForm" class="grid-container">
+          <div class=" item1 form-field">
+            <label class="choice-prefix"for="quizName">Quiz Name</label>
+          <input class="input" id="quizName" name="quizName" placeholder="Quiz Name"  pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+          </div>
+
+          <div class="item2">
+            <div class="form-field">
+              <label class="choice-prefix" for="question1">Question 1 of 3: </label>
+              <input class="input" id="question1" name="question[1]" type="text" value="" placeholder="Question 1?" pattern="[a-zA-Z0-9\s]+\?" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer11">Answer 1:</label>
+              <input class="input" id="answer11" name="answer[1][1]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer12">Answer 2:</label>
+              <input class="input" id="answer12" name="answer[1][2]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer13">Answer 3:</label>
+              <input class="input" id="answer13" name="answer[1][3]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer14">Answer 4:</label>
+              <input class="input" id="answer14" name="answer[1][4]" type="text" value="" placeholder="Correct Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+          </div>
+
+          <div class="item3">
+            <div class="form-field">
+              <label class="choice-prefix" for="question2">Question 2 of 3: </label>
+              <input class="input" id="question2" name="question[2]" type="text" value="" placeholder="Question 2?" pattern="[a-zA-Z0-9\s]+\?" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer21">Answer 1:</label>
+              <input class="input" id="answer21" name="answer[2][1]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer22">Answer 2:</label>
+              <input class="input" id="answer22" name="answer[2][2]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer23">Answer 3:</label>
+              <input class="input" id="answer23" name="answer[2][3]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer24">Answer 4:</label>
+              <input class="input" id="answer24" name="answer[2][4]" type="text" value="" placeholder="Correct Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+          </div>
+
+          <div class="item4">
+            <div class="form-field">
+              <label class="choice-prefix" for="question3">Question 3 of 3: </label>
+              <input class="input" id="question3" name="question[3]" type="text" value="" placeholder="Question 3?" pattern="[a-zA-Z0-9\s]+\?" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer31">Answer 1:</label>
+              <input class="input" id="answer31" name="answer[3][1]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer32">Answer 2:</label>
+              <input class="input" id="answer32" name="answer[3][2]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer33">Answer 3:</label>
+              <input class="input" id="answer33" name="answer[3][3]" type="text" value="" placeholder="Wrong Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+            <div class="form-field">
+              <label class="choice-prefix" for="answer34">Answer 4:</label>
+              <input class="input" id="answer34" name="answer[3][4]" type="text" value="" placeholder="Correct Answer" pattern="[a-zA-Z0-9\s]+" title="Only Letters, numbers and ?" required/>
+            </div>
+          </div>
+
+          <div class="item5">
+            <div class="form-actions">
+              <button class="btn" type="submit" id="saveNewQuizBtn">Save New Quiz</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
